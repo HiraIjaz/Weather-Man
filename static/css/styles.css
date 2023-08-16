@@ -1,0 +1,116 @@
+html{
+font-size: 20px;
+font-family: monospace;
+background-color: #C8E6C9
+}
+h1,h2{
+ text-align:center;
+ color: #E0F2F1
+ }
+.report-h2{
+    color: black
+}
+.min-temp{
+    color: blue;
+    display: inline-block;
+}
+.max-temp{
+    color: red;
+    display: inline-block;
+}
+.min-li{
+    margin-bottom: 10px;
+}
+li {
+    list-style-type: none;
+}
+li p {
+ margin:0;
+ }
+.report{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin=0;
+}
+.report-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    margin: 0 auto;
+
+}
+header{
+padding: 20px 10px
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 30%;
+
+}
+
+#report-type,
+#year,
+#month {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+button{
+    background-color: #80CBC4;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 28px;
+
+
+}
+
+button:hover {
+    background-color: #E0F2F1;
+}
+
+.report-header{
+    background-color: #26A69A  ;
+    margin-bottom: 20px;
+    width: 120%;
+
+}
+body{
+width: 100%;
+margin: 0
+}
+.base-header{
+background-color: #26A69A ;
+margin-bottom: 30px;
+}
+
+select{
+    background-color: #E0F2F1;
+    border: 1px solid black;
+}
+p{
+    color: red;
+    font-weight: bold
+}
+
