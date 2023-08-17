@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="report-header">
+        <a href="{{ url_for('base') }}">
+            <button>New Report</button></a>
+    </header>
+    <main class="report-container">
+        <div id="generated-report" class="report">
+            <h1 class="report-h2">Generated Report</h1>
+            {% if report %}
+                {% if barchart %}
+                    <h3>{{ report.title}}</h3>
+                    <ul>
+                        {% for key, value in report.items()%}
+                            {% if key!='title'%}
+                                <li><strong>{{ key }} :</strong>
+                                    {% if value[0] is defined and value[0] is integer %}
+                                    <p class="max-temp">
+                                        {% for i in range(value[0]) %}
+                                            +
+                                        {% endfor %}
+                                    </p>
+                                    {% endif %}
+                                    {{ value[0] }}
+                                </li>
+                                <li class="min-li"><strong>{{ key }} :</strong>
+                                    {% if value[1] is defined and value[1] is integer %}
+                                    <p class="min-temp">
+                                        {% for i in range(value[1]) %}
+                                            +
+                                        {% endfor %}
+                                    </p>
+                                    {% endif %}
+                                    {{ value[1] }}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% else %}
+
+                        <ul>
+                            {% for key, value in report.items() %}
+                            <li><strong>{{ key }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+
+                {% endif %}
+            {% else %}
+                <div>
+                    <p>Data for specified month is not available!!</p>
+                </div>
+        {% endif %}
+        </div>
+    </main>
+</body>
+</html>

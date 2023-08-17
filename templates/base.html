@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Man</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="base-header">
+        <h1>Weather Man App</h1>
+        <h2>Generate Weather Reports</h2>
+    </header>
+    <main class="form-container">
+        <form id ="report form" action="/generate-report" method="post">
+            <label for="report-type">Report Type:</label>
+            <select id="report-type" name="report-type">
+                <option value="year">Yearly Report</option>
+                <option value="month">Monthly Report</option>
+                <option value="chart">Chart Report</option>
+            </select>
+            <div id="year-input">
+                <label for="year">Select Year:</label>
+                <select id="year" name="year">
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+                </select>
+            </div>
+
+            <div id="month-input">
+                <label for="month">Select Month:</label>
+                <select id="month" name="month">
+                {% for month in months %}
+                    <option value="{{ month }}">{{ month }}</option>
+                {% endfor %}
+                </select>
+            </div>
+
+
+            <button type="submit">Generate Report</button>
+
+        </form>
+
+    </main>
+</body>
+</html>
